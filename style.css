@@ -2,6 +2,10 @@
     --grid-width: 114rem;
     --gutter-vertical: 8rem;
     --gutter-horizontal: 6rem;
+    --color-text: #48283d;
+    --color-background: #85496f;
+    --color-primary: #f1956e;
+    --color-secodary: #f9d46c;
 }
 
 html {
@@ -11,11 +15,36 @@ html {
 body {
     font-size: 2.6rem;
     font-family: monospace;
+    text-align: center;
+    background-color: var(--color-background);
+    color: var(--color-text);
     margin: 0;
+}
+
+.clearfix:after {
+    content: '';
+    display: table;
+    clear: both;
 }
 
 .row {
     max-width: var(--grid-width);
-    background-color: #eee;
-    margin: 0 auto 8rem;
+    background-color: var(--color-primary);
+    margin: 0 auto var(--gutter-vertical);
+    padding: 2rem;
+}
+
+.row:last-child {
+    margin-bottom: 0;
+}
+
+.row > .col-1-of-2 {
+    width: calc((100% - var(--gutter-horizontal)) / 2);
+    background-color: var(--color-secodary);
+    margin-right: var(--gutter-horizontal);
+    float: left;
+}
+
+.row > .col-1-of-2:last-child {
+    margin: 0;
 }
